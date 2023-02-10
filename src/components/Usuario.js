@@ -34,7 +34,7 @@ function trocarNome(){
     <img data-test="profile-image"src={foto} alt={foto} onClick={trocarFoto}/>
     <div class="texto">
       <span>
-        <strong>{nomeDoUsuario}</strong>
+        <strong data-test="name">{nomeDoUsuario}</strong>
         <ion-icon data-test= "edit-name" name="pencil"onClick={trocarNome} ></ion-icon>
       </span>
     </div>
