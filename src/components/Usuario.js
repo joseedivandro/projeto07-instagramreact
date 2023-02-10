@@ -10,20 +10,24 @@ const [nomeDoUsuario, setNomeDoUsuario] = useState(nomeInicial)
 
 function trocarFoto(){
   const fotoNova = prompt("qual foto deseja colocar?");
-  if(fotoNova.length !=0 || fotoNova != undefined || fotoNova != null){
+  if(!fotoNova){
+    alert("você digitou valor inválido")
+    
+  }else{
     setFoto(fotoNova);
   }
 }
 
 function trocarNome(){
   const novoNome = prompt("qual nome deseja colocar?");
-  if(novoNome.length !=0 || novoNome != undefined || novoNome != null){
+  if(!novoNome){
+    alert("você digitou valor inválido")
+    
+  }else{
     setNomeDoUsuario(novoNome);
+
   }
 }
-
-
-
 
    return (
     <div class="usuario">
