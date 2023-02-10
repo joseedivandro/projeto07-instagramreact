@@ -1,7 +1,25 @@
+import { useState } from "react";
+
 export default function PostsItems(props) {
 
-    const curtidas = 101;
+    const curtidas = Number(101);
+    const [curtida, setCurtida] =useState(curtidas);
+    const [coracao, setCoracao]=useState("heart-outline");
+    const [classeRed, setClasseRed]= useState("");
 
+
+
+    function mudanca(){
+        if(coracao==="heart-outline"){
+            setCoracao("heart");
+            setClasseRed("vermelho");
+            setCurtida(Number(curtida+1));
+        }else{
+            setCoracao("heart-outline");
+            setClasseRed("");
+            setCurtida(curtida-1);
+        }
+    }
     return (
     
     
@@ -17,13 +35,13 @@ export default function PostsItems(props) {
             </div>
 
             <div class="conteudo">
-                <img src={props.post.postagem} alt={props.post.usuario} />
+                <img data-test="post-image" src={props.post.postagem} alt={props.post.usuario} />
             </div>
 
             <div class="fundo">
                 <div class="acoes">
                     <div>
-                        <ion-icon name="heart-outline"></ion-icon>
+                        <ion-icon data-test="like-post" class={classeRed} name={coracao} onClick={mudanca}></ion-icon>
                         <ion-icon name="chatbubble-outline"></ion-icon>
                         <ion-icon name="paper-plane-outline"></ion-icon>
                     </div>
@@ -35,7 +53,7 @@ export default function PostsItems(props) {
                 <div class="curtidas">
                     <img src={props.post.curtidoPorFoto} alt={props.post.curtidoPorUser} />
                     <div class="texto">
-                        Curtido por <strong>{props.post.curtidoPorUser}</strong> e <strong>outras {curtidas} pessoas</strong>
+                        Curtido por <strong>{props.post.curtidoPorUser}</strong> e <strong>outras {curtida} pessoas</strong>
                     </div>
                 </div>
             </div>
