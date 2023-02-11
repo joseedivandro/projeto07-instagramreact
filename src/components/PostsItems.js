@@ -22,6 +22,16 @@ export default function PostsItems(props) {
         }
     }
 
+    function mudancaImagem(){
+        if(coracao==="heart-outline"){
+            setCoracao("heart");
+            setClasse("vermelho");
+            setCurtida(Number(curtida+1));
+        }else{
+            
+        }
+    }
+
     function salva(){
         if(salvar==="bookmark-outline"){
             setSalvar("bookmark");
@@ -45,7 +55,7 @@ export default function PostsItems(props) {
             </div>
 
             <div class="conteudo">
-                <img data-test="post-image" onDoubleClick ={()=>mudanca()} src={props.post.postagem} alt={props.post.usuario} />
+                <img data-test="post-image" onDoubleClick ={()=>mudancaImagem()} src={props.post.postagem} alt={props.post.usuario} />
             </div>  
 
             <div class="fundo">
