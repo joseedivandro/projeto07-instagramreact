@@ -5,20 +5,30 @@ export default function PostsItems(props) {
     const curtidas = Number(101);
     const [curtida, setCurtida] =useState(curtidas);
     const [coracao, setCoracao]=useState("heart-outline");
-    const [classeRed, setClasseRed]= useState("");
+    const [classe, setClasse]= useState("");
+    const [salvar,setSalvar]=useState("bookmark-outline");
 
 
 
     function mudanca(){
         if(coracao==="heart-outline"){
             setCoracao("heart");
-            setClasseRed("vermelho");
+            setClasse("vermelho");
             setCurtida(Number(curtida+1));
         }else{
             setCoracao("heart-outline");
-            setClasseRed("");
+            setClasse("");
             setCurtida(curtida-1);
         }
+    }
+
+    function salva(){
+        if(salvar==="bookmark-outline"){
+            setSalvar("bookmark");
+        }else{
+            setSalvar("bookmark-outline");
+        }
+
     }
     return (
     
@@ -35,18 +45,18 @@ export default function PostsItems(props) {
             </div>
 
             <div class="conteudo">
-                <img data-test="post-image" src={props.post.postagem} alt={props.post.usuario} />
+                <img data-test="post-image" onDoubleClick={mudanca} src={props.post.postagem} alt={props.post.usuario} />
             </div>
 
             <div class="fundo">
                 <div class="acoes">
                     <div>
-                        <ion-icon data-test="like-post" class={classeRed} name={coracao} onClick={mudanca}></ion-icon>
+                        <ion-icon data-test="like-post" class={classe} name={coracao} onClick={mudanca}></ion-icon>
                         <ion-icon name="chatbubble-outline"></ion-icon>
                         <ion-icon name="paper-plane-outline"></ion-icon>
                     </div>
                     <div>
-                        <ion-icon name="bookmark-outline"></ion-icon>
+                        <ion-icon data-test="save-post" name={salvar} onClick={salva} ></ion-icon>
                     </div>
                 </div>
 
