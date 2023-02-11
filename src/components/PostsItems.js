@@ -73,7 +73,7 @@ export default function PostsItems(props) {
                 <div class="curtidas">
                     <img src={props.post.curtidoPorFoto} alt={props.post.curtidoPorUser} />
                     <div class="texto">
-                        Curtido por <strong data-test="likes-number">{props.post.curtidoPorUser}</strong> e <strong>outras {curtida} pessoas</strong>
+                        Curtido por <strong >{props.post.curtidoPorUser}</strong> e <strong data-test="likes-number">outras {curtida} pessoas</strong>
                     </div>
                 </div>
             </div>
