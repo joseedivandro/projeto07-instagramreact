@@ -45,18 +45,18 @@ export default function PostsItems(props) {
             </div>
 
             <div class="conteudo">
-                <img data-test="post-image" onDoubleClick={mudanca} src={props.post.postagem} alt={props.post.usuario} />
-            </div>
+                <img data-test="post-image" onDoubleClick ={()=>mudanca()} src={props.post.postagem} alt={props.post.usuario} />
+            </div>  
 
             <div class="fundo">
                 <div class="acoes">
                     <div>
-                        <ion-icon data-test="like-post" class={classe} name={coracao} onClick={mudanca}></ion-icon>
+                        <ion-icon data-test="like-post" class={classe} name={coracao} onClick={()=>mudanca()}></ion-icon>
                         <ion-icon name="chatbubble-outline"></ion-icon>
                         <ion-icon name="paper-plane-outline"></ion-icon>
                     </div>
                     <div>
-                        <ion-icon data-test="save-post" name={salvar} onClick={salva} ></ion-icon>
+                        <ion-icon data-test="save-post" name={salvar} onClick={()=>salva()} ></ion-icon>
                     </div>
                 </div>
 
