@@ -8,7 +8,7 @@ export default function Stories() {
     return (
         <div class="stories">
             {story.map((f)=>(
-                <StoriesItem story={f}/>
+                <StoriesItem  key={f.usuario} story={f}/>
             ))}
 
                 <div class="setinha">

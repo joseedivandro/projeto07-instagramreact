@@ -3,7 +3,7 @@ export default function SugestoesItems(props) {
        
 
             <div class="sugestao">
-                <div class="usuario">
+                <div class ="usuario">
                     <img src={props.sugestao.imagem} alt={props.sugestao.usuario} />
                     <div class="texto">
                         <div class="nome">{props.sugestao.usuario}</div>

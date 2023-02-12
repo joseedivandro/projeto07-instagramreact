@@ -9,7 +9,7 @@ export default function Posts (){
         
     <div class="posts">
    {post.map((f)=> (
-    <PostsItems post={f}/>
+    <PostsItems key={f.usuario} post={f}/>
    ))}
 </div>
     );

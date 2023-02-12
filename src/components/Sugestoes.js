@@ -10,7 +10,7 @@ export default function Sugestoes() {
             </div>
 
             {sugestao.map((f)=>(
-                <SugestoesItems sugestao={f}/>
+                <SugestoesItems key={f.usuario} sugestao={f} />
             ))}
         </div>
     )
