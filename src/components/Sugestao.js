@@ -10,8 +10,8 @@ const sugestao =[
 
     },
     {
-        usuario: "bad.vibes.memes",
-        imagem: "assets/bad.vibes.memes.svg"
+        usuario: "respondeai",
+        imagem: "assets/respondeai.svg"
 
     },
 ];
